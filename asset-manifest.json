@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/nidhal-portfolio/static/css/main.31d6cfe0.css",
-    "main.js": "/nidhal-portfolio/static/js/main.f998eaec.js",
+    "main.js": "/nidhal-portfolio/static/js/main.d1452f8a.js",
     "static/js/453.8b0c4d4a.chunk.js": "/nidhal-portfolio/static/js/453.8b0c4d4a.chunk.js",
     "static/media/bloc.mp4": "/nidhal-portfolio/static/media/bloc.64526992a81ce04ee4fe.mp4",
     "static/media/dayte.mp4": "/nidhal-portfolio/static/media/dayte.1098bcc4b07fb47cd934.mp4",
@@ -70,11 +70,11 @@
     "static/media/Capture d’écran 2025-07-02 154811.png": "/nidhal-portfolio/static/media/Capture d’écran 2025-07-02 154811.a05b584f84c963252bee.png",
     "static/media/library6.png": "/nidhal-portfolio/static/media/library6.a05b584f84c963252bee.png",
     "index.html": "/nidhal-portfolio/index.html",
-    "main.f998eaec.js.map": "/nidhal-portfolio/static/js/main.f998eaec.js.map",
+    "main.d1452f8a.js.map": "/nidhal-portfolio/static/js/main.d1452f8a.js.map",
     "453.8b0c4d4a.chunk.js.map": "/nidhal-portfolio/static/js/453.8b0c4d4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.f998eaec.js"
+    "static/js/main.d1452f8a.js"
   ]
 }
