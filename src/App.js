@@ -1,13 +1,6 @@
 import React from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
-import styled, {
-  ThemeProvider,
-  createGlobalStyle,
-} from "styled-components";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
 import { motion } from "framer-motion";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import LanguageToggle from "./components/LanguageToggle";
@@ -100,7 +93,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <LanguageProvider>
-        <Router>
+        <Router basename="/nidhal-portfolio">
           <AppContainer>
             <ParticleBackground />
             <LanguageToggle />
