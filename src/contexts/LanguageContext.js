@@ -119,7 +119,6 @@ const translations = {
             "Built intern management and tracking system",
             "Implemented application and evaluation workflows",
             "Created dashboard for administrators and supervisors",
-            "Integrated reporting and analytics features",
           ],
         },
         initiation: {
@@ -131,9 +130,6 @@ const translations = {
             "First professional experience working on e-commerce database development and management.",
           achievements: [
             "Worked on e-commerce database design and optimization",
-            "Learned database management best practices",
-            "Assisted in data migration and cleanup processes",
-            "Gained experience in SQL and database operations",
           ],
         },
       },

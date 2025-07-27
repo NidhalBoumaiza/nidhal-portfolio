@@ -213,9 +213,7 @@ const Experience = () => {
       duration: t("experience.experiences.freelance.duration"),
       location: t("experience.experiences.freelance.location"),
       description: t("experience.experiences.freelance.description"),
-      achievements: t(
-        "experience.experiences.freelance.achievements"
-      ),
+      achievements: t("experience.experiences.freelance.achievements"),
       technologies: [
         "Flutter",
         "Dart",
@@ -230,32 +228,18 @@ const Experience = () => {
       company: t("experience.experiences.endOfStudies.company"),
       duration: t("experience.experiences.endOfStudies.duration"),
       location: t("experience.experiences.endOfStudies.location"),
-      description: t(
-        "experience.experiences.endOfStudies.description"
-      ),
-      achievements: t(
-        "experience.experiences.endOfStudies.achievements"
-      ),
-      technologies: [
-        "JavaScript",
-        "React",
-        "Node.js",
-        "MongoDB",
-        "Express.js",
-      ],
+      description: t("experience.experiences.endOfStudies.description"),
+      achievements: t("experience.experiences.endOfStudies.achievements"),
+      technologies: ["JavaScript", "React", "Node.js", "MongoDB", "Express.js"],
     },
     {
       title: t("experience.experiences.development.title"),
       company: t("experience.experiences.development.company"),
       duration: t("experience.experiences.development.duration"),
       location: t("experience.experiences.development.location"),
-      description: t(
-        "experience.experiences.development.description"
-      ),
-      achievements: t(
-        "experience.experiences.development.achievements"
-      ),
-      technologies: ["Java", "MySQL", "JavaScript", "HTML/CSS"],
+      description: t("experience.experiences.development.description"),
+      achievements: t("experience.experiences.development.achievements"),
+      technologies: ["Flutter", "Node.js", "MongoDB", "Express.js"],
     },
     {
       title: t("experience.experiences.initiation.title"),
@@ -263,15 +247,8 @@ const Experience = () => {
       duration: t("experience.experiences.initiation.duration"),
       location: t("experience.experiences.initiation.location"),
       description: t("experience.experiences.initiation.description"),
-      achievements: t(
-        "experience.experiences.initiation.achievements"
-      ),
-      technologies: [
-        "SQL",
-        "MySQL",
-        "Database Design",
-        "Data Analysis",
-      ],
+      achievements: t("experience.experiences.initiation.achievements"),
+      technologies: ["Prestashop"],
     },
   ];
 
@@ -324,9 +301,7 @@ const Experience = () => {
 
                 <Achievements>
                   {exp.achievements.map((achievement, achIndex) => (
-                    <Achievement key={achIndex}>
-                      {achievement}
-                    </Achievement>
+                    <Achievement key={achIndex}>{achievement}</Achievement>
                   ))}
                 </Achievements>
 
