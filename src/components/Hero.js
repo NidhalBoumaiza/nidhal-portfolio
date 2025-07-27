@@ -49,6 +49,10 @@ const ProfileImageContainer = styled(motion.div)`
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     order: -1;
   }
+
+  @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
+    margin-top: 6rem; // Add space below the header on mobile
+  }
 `;
 
 const ProfileImage = styled(motion.img)`
