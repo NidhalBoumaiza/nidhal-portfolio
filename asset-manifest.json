@@ -1,11 +1,12 @@
 {
   "files": {
     "main.css": "/nidhal-portfolio/static/css/main.31d6cfe0.css",
-    "main.js": "/nidhal-portfolio/static/js/main.b9b30246.js",
+    "main.js": "/nidhal-portfolio/static/js/main.773acc8f.js",
     "static/js/453.8b0c4d4a.chunk.js": "/nidhal-portfolio/static/js/453.8b0c4d4a.chunk.js",
     "static/media/bloc.mp4": "/nidhal-portfolio/static/media/bloc.64526992a81ce04ee4fe.mp4",
     "static/media/dayte.mp4": "/nidhal-portfolio/static/media/dayte.1098bcc4b07fb47cd934.mp4",
     "static/media/campFire Strory.mp4": "/nidhal-portfolio/static/media/campFire Strory.a69bba515dd11387365e.mp4",
+    "static/media/nidhal-pic.png": "/nidhal-portfolio/static/media/nidhal-pic.c1f31495299ba1bb5135.png",
     "static/media/fjkf.png": "/nidhal-portfolio/static/media/fjkf.4c0e41657f1e39cce664.png",
     "static/media/zbcksvb.png": "/nidhal-portfolio/static/media/zbcksvb.6a0c4ef237e7e6a4c7d4.png",
     "static/media/bzebf.png": "/nidhal-portfolio/static/media/bzebf.71d9ed2c915b31e78ed6.png",
@@ -22,7 +23,6 @@
     "static/media/library5.png": "/nidhal-portfolio/static/media/library5.1f94798d0ec31bd46a50.png",
     "static/media/djkjf.png": "/nidhal-portfolio/static/media/djkjf.bb02c19e06af53c46e2b.png",
     "static/media/vndsvn.png": "/nidhal-portfolio/static/media/vndsvn.fdddd1e6521765a4e351.png",
-    "static/media/nidhal-pic.jpg": "/nidhal-portfolio/static/media/nidhal-pic.73c5c29b77deebb77b5e.jpg",
     "static/media/Capture d’écran 2025-07-02 154638.png": "/nidhal-portfolio/static/media/Capture d’écran 2025-07-02 154638.ec37074b5ffb7fb83556.png",
     "static/media/library1.png": "/nidhal-portfolio/static/media/library1.ec37074b5ffb7fb83556.png",
     "static/media/WhatsApp Image 2025-06-21 à 19.49.30_5c42a3f1.jpg": "/nidhal-portfolio/static/media/WhatsApp Image 2025-06-21 à 19.49.30_5c42a3f1.21abc9d4a2802d7cef5c.jpg",
@@ -70,11 +70,11 @@
     "static/media/Capture d’écran 2025-07-02 154811.png": "/nidhal-portfolio/static/media/Capture d’écran 2025-07-02 154811.a05b584f84c963252bee.png",
     "static/media/library6.png": "/nidhal-portfolio/static/media/library6.a05b584f84c963252bee.png",
     "index.html": "/nidhal-portfolio/index.html",
-    "main.b9b30246.js.map": "/nidhal-portfolio/static/js/main.b9b30246.js.map",
+    "main.773acc8f.js.map": "/nidhal-portfolio/static/js/main.773acc8f.js.map",
     "453.8b0c4d4a.chunk.js.map": "/nidhal-portfolio/static/js/453.8b0c4d4a.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.b9b30246.js"
+    "static/js/main.773acc8f.js"
   ]
 }
