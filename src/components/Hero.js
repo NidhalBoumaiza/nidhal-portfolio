@@ -56,10 +56,12 @@ const ProfileImageContainer = styled(motion.div)`
 `;
 
 const ProfileImage = styled(motion.img)`
-  width: 280px;
-  height: 280px;
+  width: 300px;
+  height: 420px;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center;
+  transform: scale(1);
   border: 4px solid ${(props) => props.theme.colors.primary};
   box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
   position: relative;
@@ -68,11 +70,13 @@ const ProfileImage = styled(motion.img)`
   @media (max-width: ${(props) => props.theme.breakpoints.tablet}) {
     width: 200px;
     height: 200px;
+    transform: scale(1);
   }
 
   @media (max-width: ${(props) => props.theme.breakpoints.mobile}) {
     width: 150px;
     height: 150px;
+    transform: scale(1);
   }
 `;
 
