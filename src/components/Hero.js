@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ReactTyped } from "react-typed";
 import { FiDownload, FiMail, FiMapPin, FiPhone } from "react-icons/fi";
 import { useLanguage } from "../contexts/LanguageContext";
-import profileImage from "../assets/nidhal-pic.jpg";
+import profileImage from "../assets/nidhal-pic.png";
 
 const HeroSection = styled.section`
   min-height: 100vh;
