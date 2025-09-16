@@ -8,7 +8,11 @@ import {
   FiGithub,
   FiLinkedin,
   FiSend,
+  FiAlertCircle,
 } from "react-icons/fi";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import { useLanguage } from "../contexts/LanguageContext";
 
 const ContactSection = styled.section`
@@ -225,34 +229,82 @@ const SubmitButton = styled(motion.button)`
   }
 `;
 
+const ErrorMessage = styled.div`
+  color: #ff6b6b;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+
+  svg {
+    font-size: 0.875rem;
+  }
+`;
+
+// Zod validation schema
+const contactSchema = z.object({
+  name: z
+    .string()
+    .min(2, "Name must be at least 2 characters")
+    .max(50, "Name must be less than 50 characters"),
+  email: z
+    .string()
+    .email("Please enter a valid email address")
+    .min(1, "Email is required"),
+  subject: z
+    .string()
+    .min(5, "Subject must be at least 5 characters")
+    .max(100, "Subject must be less than 100 characters"),
+  message: z
+    .string()
+    .min(10, "Message must be at least 10 characters")
+    .max(1000, "Message must be less than 1000 characters"),
+});
+
 const Contact = () => {
   const { t } = useLanguage();
-
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: "",
-  });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+    },
+  });
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
+  const onSubmit = async (data) => {
+    try {
+      setIsSubmitting(true);
+      const res = await fetch("https://formspree.io/f/mpwjgqvv", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        reset();
+        alert(t("contact.thankYou"));
+        console.log("Form submitted successfully", res, "formData:", data);
+      } else {
+        console.error("Error submitting form:", res.statusText);
+        alert("Error submitting form. Please try again.");
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
+      alert("Error submitting form. Please try again.");
+    } finally {
       setIsSubmitting(false);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      alert(t("contact.thankYou"));
-    }, 2000);
+    }
   };
 
   const contactItems = [
@@ -350,19 +402,27 @@ const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
           >
             <FormGroup>
               <FormLabel htmlFor="name">{t("contact.name")}</FormLabel>
               <FormInput
                 type="text"
                 id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
+                {...register("name")}
                 placeholder={t("contact.placeholders.name")}
-                required
+                style={{
+                  borderColor: errors.name
+                    ? "#ff6b6b"
+                    : "rgba(0, 212, 255, 0.2)",
+                }}
               />
+              {errors.name && (
+                <ErrorMessage>
+                  <FiAlertCircle />
+                  {errors.name.message}
+                </ErrorMessage>
+              )}
             </FormGroup>
 
             <FormGroup>
@@ -370,12 +430,20 @@ const Contact = () => {
               <FormInput
                 type="email"
                 id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
+                {...register("email")}
                 placeholder={t("contact.placeholders.email")}
-                required
+                style={{
+                  borderColor: errors.email
+                    ? "#ff6b6b"
+                    : "rgba(0, 212, 255, 0.2)",
+                }}
               />
+              {errors.email && (
+                <ErrorMessage>
+                  <FiAlertCircle />
+                  {errors.email.message}
+                </ErrorMessage>
+              )}
             </FormGroup>
 
             <FormGroup>
@@ -383,24 +451,40 @@ const Contact = () => {
               <FormInput
                 type="text"
                 id="subject"
-                name="subject"
-                value={formData.subject}
-                onChange={handleChange}
+                {...register("subject")}
                 placeholder={t("contact.placeholders.subject")}
-                required
+                style={{
+                  borderColor: errors.subject
+                    ? "#ff6b6b"
+                    : "rgba(0, 212, 255, 0.2)",
+                }}
               />
+              {errors.subject && (
+                <ErrorMessage>
+                  <FiAlertCircle />
+                  {errors.subject.message}
+                </ErrorMessage>
+              )}
             </FormGroup>
 
             <FormGroup>
               <FormLabel htmlFor="message">{t("contact.message")}</FormLabel>
               <FormTextarea
                 id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
+                {...register("message")}
                 placeholder={t("contact.placeholders.message")}
-                required
+                style={{
+                  borderColor: errors.message
+                    ? "#ff6b6b"
+                    : "rgba(0, 212, 255, 0.2)",
+                }}
               />
+              {errors.message && (
+                <ErrorMessage>
+                  <FiAlertCircle />
+                  {errors.message.message}
+                </ErrorMessage>
+              )}
             </FormGroup>
 
             <SubmitButton
