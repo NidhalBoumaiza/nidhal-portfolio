@@ -93,35 +93,33 @@ function App() {
     <ThemeProvider theme={theme}>
       <GlobalStyles />
       <LanguageProvider>
-        <Router basename="/nidhal-portfolio">
-          <AppContainer>
-            <ParticleBackground />
-            <LanguageToggle />
-            <Header />
-            <MainContent
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8 }}
-            >
-              <Routes>
-                <Route
-                  path="/"
-                  element={
-                    <>
-                      <Hero />
-                      <About />
-                      <Skills />
-                      <Experience />
-                      <Projects />
-                      <Education />
-                      <Contact />
-                    </>
-                  }
-                />
-              </Routes>
-            </MainContent>
-          </AppContainer>
-        </Router>
+        <AppContainer>
+          <ParticleBackground />
+          <LanguageToggle />
+          <Header />
+          <MainContent
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    <Hero />
+                    <About />
+                    <Skills />
+                    <Experience />
+                    <Projects />
+                    <Education />
+                    <Contact />
+                  </>
+                }
+              />
+            </Routes>
+          </MainContent>
+        </AppContainer>
       </LanguageProvider>
     </ThemeProvider>
   );
